@@ -24,3 +24,7 @@ Route::get('/home', function () {
 Route::get('/empresas', function () {
     return view('empresas');
 });
+
+Route::get('/addempresas', function () {
+    return view('addempresas');
+});

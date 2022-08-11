@@ -6,8 +6,10 @@
 
         <title>Laravel</title>
         
+        <link rel="stylesheet" href="{{ asset('css/formulario.css') }}">
         <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
         <link rel="stylesheet" href="{{ asset('css/principal.css') }}">
+        
 
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     </head>
@@ -19,15 +21,15 @@
         <div class="sidebar">
 
             <header>TaxiADM</header>
-            <a href="/home" class="active">
+            <a href="/home">
                 <i class="fas fa-qrcode"></i>
                 <span>Inicio</span>
             </a>
-            <a href="/empresas" >
+            <a href="/empresas">
                 <i class="fas fa-link"></i>
                 <span>Empresas</span>
             </a>
-            <a href="/addempresas">
+            <a href="/addempresas" class="active">
                 <i class="fas fa-link"></i>
                 <span>Add_Empresas</span>
             </a>
@@ -62,7 +64,23 @@
 
         <div class="containerprincipal">
             <div class="container2">
-                
+                <div class="formulario-div">
+                    <form class="formulario" action=""  method="post"> 
+
+                    <div class="form-group">
+                        <label>Nome da empresa</label>
+                        <input type="text" placeholder="Digite o título" name="nomeEmpresa" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Nome da empresa</label>
+                        <input type="text" placeholder="Digite o título" name="cnpj" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" action="" class="">Adicionar Empresa</button>
+                    </div>
+
+                    </form>
+                </div>
             </div>
         </div>
         

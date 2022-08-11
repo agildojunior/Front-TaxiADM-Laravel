@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family-Montserrat:600|Open+Sans:600&display-swap');
+
+.tabela{
+    
+    border-collapse: collapse;
+    max-height: 400px;
+    overflow-x: hidden;
+}
+
+.tabela thead{
+    background-color: rgb(15, 15, 15);
+    
+}
+
+.tabela thead tr th{
+    text-align: left;
+    color: white;
+}
+
+.tabela td{
+    background-color: #1b1b1b;
+}
+
+
+.tabela th, .tabela td{
+    font-family: 'Montserrat' , sans-serif;
+    padding: 15px;
+    box-sizing: border-box;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    max-width: 150px;
+    color: white;
+}
+
+.paginacao{
+    font-family: 'Montserrat' , sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(15, 15, 15);
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    height: 40px;
+    padding: 0 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.paginacao .pagina{
+    height: 30px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background-color: white;
+    margin: 0 5px;
+    color: black;
+    font-weight: 600;
+}
+
+.paginacao .pagina:hover{
+    filter: brightness(.7);
+    -webkit-filter: brightness(.7);
+}
+
+.paginacao .pagina.active{
+    background-color: rgb(33, 33, 33);
+    color: white;
+}

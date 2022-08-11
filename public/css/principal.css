@@ -21,12 +21,13 @@ body{
 
 .container2{
     min-height: 500px;
-    background-color: rgb(255, 255, 255);
+    min-width: 500px;
+    /* background-color: rgb(255, 255, 255); */
     border-radius: 20px;
     text-align: center;
     display: flex;
     margin: 90px;
     flex-direction: column;
     transition: all .5s ease;
-    box-shadow: 0 0 2em black;
+    /* box-shadow: 0 0 2em black; */
 }
