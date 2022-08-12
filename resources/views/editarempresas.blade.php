@@ -66,21 +66,23 @@
             <div class="container2">
                 <div class="formulario-div">
                 @csrf
-                    <form class="formulario" action="/adicionarempresas"  method="get"> 
-
+                
+                    <form class="formulario" action="{{ route('editar_empresas3', ['id' => $responseArray['id']]) }}"  method="get"> 
+                    
                     <div class="form-group">
                         <label>Nome da empresa</label>
-                        <input type="text" placeholder="Digite o título" name="nomeEmpresa" required>
+                        <input type="text" value="" placeholder="{{$responseArray['name']}}" name="nomeEmpresa" required>
                     </div>
                     <div class="form-group">
                         <label>cnpj</label>
-                        <input type="text" placeholder="Digite o título" name="cnpj" required>
+                        <input type="text" value="" placeholder="{{$responseArray['cnpj']}}" name="cnpj" required>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="">Adicionar Empresa</button>
+                        <button type="submit" class="">Editar Empresa</button>
                     </div>
 
                     </form>
+                
                 </div>
             </div>
         </div>

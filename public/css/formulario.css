@@ -38,3 +38,18 @@
     font-family: 'Montserrat' , sans-serif;
 }
 
+.form-group-inv input{
+    width: 0px;
+    height: 0px;
+    color: #00000000;
+}
+.form-group-inv label{
+    width: 0px;
+    height: 0px;
+    color: #00000000;
+}
+.form-group-inv button{
+    width: 0px;
+    height: 0px;
+    color: #00000000;
+}

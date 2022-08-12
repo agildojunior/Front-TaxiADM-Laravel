@@ -32,6 +32,10 @@
     color: white;
 }
 
+.tabela td form{
+    float:left;
+}
+
 .paginacao{
     font-family: 'Montserrat' , sans-serif;
     display: flex;
@@ -67,4 +71,32 @@
 .paginacao .pagina.active{
     background-color: rgb(33, 33, 33);
     color: white;
+}
+
+.buttonedit{
+    width: 60px;
+    background-color: rgb(255, 255, 198);
+    border: 1px solid black;
+    border-radius: 5px;
+    color: black;
+    padding: 5px;
+    font-family: 'Montserrat' , sans-serif;
+    font-weight: bold;
+}
+.buttonedit:hover{
+    background-color: rgb(255, 255, 166);
+}
+
+.buttondelete{
+    width: 60px;
+    background-color: rgb(255, 213, 213);
+    border: 1px solid black;
+    border-radius: 5px;
+    color: black;
+    padding: 5px;
+    font-family: 'Montserrat' , sans-serif;
+    font-weight: bold;
+}
+.buttondelete:hover{
+    background-color: rgb(255, 180, 180);
 }

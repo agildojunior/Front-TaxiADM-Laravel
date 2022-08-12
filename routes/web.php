@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\consumirapiController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +31,19 @@ Route::get('/empresas', function () {
 Route::get('/addempresas', function () {
     return view('addempresas');
 });
+
+Route::get('/editarempresas', function () {
+    return view('editarempresas');
+});
+
+
+
+//-----------------------------------------------------------------------------------
+
+Route::get('/empresas', [consumirapiController::class, 'todasempresas']);
+
+Route::get('/adicionarempresas', [consumirapiController::class, 'adicionarempresas']);
+
+Route::get('/editarempresas2{id}', [consumirapiController::class, 'editarempresas2'])->name('editar_empresas');
+Route::get('/editarempresas3{id}', [consumirapiController::class, 'editarempresas3'])->name('editar_empresas3');
+

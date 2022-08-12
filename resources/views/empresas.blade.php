@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -63,8 +64,9 @@
 
         <div class="containerprincipal">
             <div class="container2">
-
+                
                 <table class="tabela">
+
                     <thead>
                         <tr>
                             <th>#</th>
@@ -75,35 +77,31 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($responseArray as $empresa)
                         <tr>
-                            <td>1</td>
-                            <td>AquaPark</td>
-                            <td>123456789000</td>
+                            <td>{{ $empresa['id'] }}</td>
+                            <td>{{ $empresa['name'] }}</td>
+                            <td>{{ $empresa['cnpj'] }}</td>
                             <td>Pau dos Ferros RN</td>
-                            <td>Editar / Apagar</td>
+                            <td class="tdform">
+                                <form class="formulario" action="" method="get"> 
+                                    <!-- <select name="id" id="id">
+                                        <option value="{{ $empresa['id'] }}">{{ $empresa['id'] }}</option>
+                                    </select> -->
+                                    <button type="submit" class="buttondelete">Apagar</button>
+                                </form>
+                                <form class="formulario" action="{{ route('editar_empresas', ['id' => $empresa['id']]) }}" method="get"> 
+                                    <!-- <select name="id" id="id">
+                                        <option value="{{ $empresa['id'] }}">{{ $empresa['id'] }}</option>
+                                    </select> -->
+                                    <button type="submit" class="buttonedit">Editar</button>
+                                </form>
+                            </td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>AquaPark</td>
-                            <td>123456789000</td>
-                            <td>Pau dos Ferros RN</td>
-                            <td>Editar / Apagar</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>AquaPark</td>
-                            <td>123456789000</td>
-                            <td>Pau dos Ferros RN</td>
-                            <td>Editar / Apagar</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>AquaPark</td>
-                            <td>123456789000</td>
-                            <td>Pau dos Ferros RN</td>
-                            <td>Editar / Apagar</td>
-                        </tr>
+                        @endforeach
                     </tbody>
+                    
+                    
                 </table>
                 <div class="paginacao">
                         <div class="pagina"><</div>
