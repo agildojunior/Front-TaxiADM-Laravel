@@ -71,7 +71,14 @@
                     
                     <div class="form-group">
                         <label>Status</label>
-                        <input type="text" value="" placeholder="{{$responseArray['status_corrida']}}" name="status" required>
+
+                            <select name="status" id="status">
+                                <option value="Solicitada">Solicitada</option>
+                                <option value="Aceita">Aceita</option>
+                                <option value="Finalizada">Finalizada</option>
+                            </select>
+                            
+                        <!-- <input type="text" value="" placeholder="{{$responseArray['status_corrida']}}" name="status" required> -->
                     </div>
                     <div class="form-group">
                         <button type="submit" class="">Editar Status</button>

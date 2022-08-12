@@ -8,13 +8,7 @@ use Illuminate\Support\Facades\Http;
 class consumirapiController extends Controller
 {
     //
-    // public function todosemprestimos(){
-    //     $emprestimo = Emprestimo::orderBy('created_at', 'desc')->get();
-    //     return view('panel.allemprestimos',['emprestimo'=>$emprestimo]);
-    // }
-
-
-
+    
     //------------------------------------------------------------------
     //------------------------------------------------------------------
     //                            Empresas

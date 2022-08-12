@@ -25,6 +25,16 @@
     border-radius: 5px;
 }
 
+.form-group select{
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1em;
+    font: 1em 'Montserrat' , sans-serif;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
 .form-group label{
     text-align: left;
 }
