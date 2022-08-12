@@ -29,7 +29,7 @@
                 <i class="fas fa-link"></i>
                 <span>Empresas</span>
             </a>
-            <a href="/addempresas" class="active">
+            <a href="/addempresas">
                 <i class="fas fa-link"></i>
                 <span>Add_Empresas</span>
             </a>
@@ -37,7 +37,7 @@
                 <i class="fas fa-stream"></i>
                 <span>Taxis</span>
             </a>
-            <a href="/addtaxis">
+            <a href="/addtaxis" class="active">
                 <i class="fas fa-stream"></i>
                 <span>Add_Taxis</span>
             </a>
@@ -66,18 +66,14 @@
             <div class="container2">
                 <div class="formulario-div">
                 @csrf
-                    <form class="formulario" action="/adicionarempresas"  method="get"> 
+                    <form class="formulario" action="/adicionartaxis"  method="get"> 
 
                     <div class="form-group">
-                        <label>Nome da empresa</label>
-                        <input type="text" placeholder="Digite o título" name="nomeEmpresa" required>
+                        <label>Nome do Motorista</label>
+                        <input type="text" placeholder="Digite o título" name="name_motorista" required>
                     </div>
                     <div class="form-group">
-                        <label>cnpj</label>
-                        <input type="text" placeholder="Digite o título" name="cnpj" required>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="">Adicionar Empresa</button>
+                        <button type="submit" class="">Adicionar Taxi</button>
                     </div>
 
                     </form>

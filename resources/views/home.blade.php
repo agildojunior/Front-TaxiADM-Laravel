@@ -31,11 +31,11 @@
                 <i class="fas fa-link"></i>
                 <span>Add_Empresas</span>
             </a>
-            <a href="#">
+            <a href="/taxis">
                 <i class="fas fa-stream"></i>
                 <span>Taxis</span>
             </a>
-            <a href="#">
+            <a href="/addtaxis">
                 <i class="fas fa-stream"></i>
                 <span>Add_Taxis</span>
             </a>

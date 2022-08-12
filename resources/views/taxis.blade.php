@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -6,10 +7,9 @@
 
         <title>Laravel</title>
         
-        <link rel="stylesheet" href="{{ asset('css/formulario.css') }}">
         <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
         <link rel="stylesheet" href="{{ asset('css/principal.css') }}">
-        
+        <link rel="stylesheet" href="{{ asset('css/tabela.css') }}">
 
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     </head>
@@ -29,11 +29,11 @@
                 <i class="fas fa-link"></i>
                 <span>Empresas</span>
             </a>
-            <a href="/addempresas" class="active">
+            <a href="/addempresas">
                 <i class="fas fa-link"></i>
                 <span>Add_Empresas</span>
             </a>
-            <a href="/taxis">
+            <a href="/taxis" class="active">
                 <i class="fas fa-stream"></i>
                 <span>Taxis</span>
             </a>
@@ -64,24 +64,46 @@
 
         <div class="containerprincipal">
             <div class="container2">
-                <div class="formulario-div">
-                @csrf
-                    <form class="formulario" action="/adicionarempresas"  method="get"> 
+                
+                <table class="tabela">
 
-                    <div class="form-group">
-                        <label>Nome da empresa</label>
-                        <input type="text" placeholder="Digite o título" name="nomeEmpresa" required>
-                    </div>
-                    <div class="form-group">
-                        <label>cnpj</label>
-                        <input type="text" placeholder="Digite o título" name="cnpj" required>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="">Adicionar Empresa</button>
-                    </div>
-
-                    </form>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nome</th>
+                            <th>...</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($responseArray as $taxi)
+                        <tr>
+                            <td>{{ $taxi['id'] }}</td>
+                            <td>{{ $taxi['name_motorista'] }}</td>
+                            <!-- <td>Pau dos Ferros RN</td> -->
+                            <td class="tdform">
+                                <form class="formulario" action="" method="get"> 
+                                    <button type="submit" class="buttondelete">Apagar</button>
+                                </form>
+                                <form class="formulario" action="{{ route('editar_taxis', ['id' => $taxi['id']]) }}" method="get"> 
+                                    <button type="submit" class="buttonedit">Editar</button>
+                                </form>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                    
+                    
+                </table>
+                <div class="paginacao">
+                        <div class="pagina"><</div>
+                        <div class="pagina">1</div>
+                        <div class="pagina">2</div>
+                        <div class="pagina active">3</div>
+                        <div class="pagina">4</div>
+                        <div class="pagina">5</div>
+                        <div class="pagina">></div>
                 </div>
+
             </div>
         </div>
         

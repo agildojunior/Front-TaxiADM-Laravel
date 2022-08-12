@@ -36,10 +36,18 @@ Route::get('/editarempresas', function () {
     return view('editarempresas');
 });
 
+Route::get('/taxis', function () {
+    return view('taxis');
+});
+
+Route::get('/addtaxis', function () {
+    return view('addtaxis');
+});
+
 
 
 //-----------------------------------------------------------------------------------
-
+//empresas
 Route::get('/empresas', [consumirapiController::class, 'todasempresas']);
 
 Route::get('/adicionarempresas', [consumirapiController::class, 'adicionarempresas']);
@@ -47,3 +55,13 @@ Route::get('/adicionarempresas', [consumirapiController::class, 'adicionarempres
 Route::get('/editarempresas2{id}', [consumirapiController::class, 'editarempresas2'])->name('editar_empresas');
 Route::get('/editarempresas3{id}', [consumirapiController::class, 'editarempresas3'])->name('editar_empresas3');
 
+//------------------------------------------------------------------------------------
+//taxis
+Route::get('/taxis', [consumirapiController::class, 'todostaxis']);
+
+Route::get('/adicionartaxis', [consumirapiController::class, 'adicionartaxis']);
+
+Route::get('/editartaxis2{id}', [consumirapiController::class, 'editartaxis2'])->name('editar_taxis');
+Route::get('/editartaxis3{id}', [consumirapiController::class, 'editartaxis3'])->name('editar_taxis3');
+//-----------------------------------------------------------------------------------
+//corridas
