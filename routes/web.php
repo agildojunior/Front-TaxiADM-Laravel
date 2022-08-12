@@ -44,6 +44,13 @@ Route::get('/addtaxis', function () {
     return view('addtaxis');
 });
 
+Route::get('/corridas', function () {
+    return view('corridas');
+});
+
+Route::get('/editarstatuscorrida', function () {
+    return view('editarstatuscorrida');
+});
 
 
 //-----------------------------------------------------------------------------------
@@ -63,5 +70,10 @@ Route::get('/adicionartaxis', [consumirapiController::class, 'adicionartaxis']);
 
 Route::get('/editartaxis2{id}', [consumirapiController::class, 'editartaxis2'])->name('editar_taxis');
 Route::get('/editartaxis3{id}', [consumirapiController::class, 'editartaxis3'])->name('editar_taxis3');
+
 //-----------------------------------------------------------------------------------
 //corridas
+Route::get('/corridas', [consumirapiController::class, 'todascorridas']);
+
+Route::get('/editarstatus{id}', [consumirapiController::class, 'editarstatus'])->name('editar_status');
+Route::get('/editarstatusb/{id}', [consumirapiController::class, 'editarstatusb'])->name('editar_statusb');

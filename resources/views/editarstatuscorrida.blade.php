@@ -29,11 +29,11 @@
                 <i class="fas fa-link"></i>
                 <span>Empresas</span>
             </a>
-            <a href="/addempresas" >
+            <a href="/addempresas">
                 <i class="fas fa-link"></i>
                 <span>Add_Empresas</span>
             </a>
-            <a href="/taxis" class="active">
+            <a href="/taxis">
                 <i class="fas fa-stream"></i>
                 <span>Taxis</span>
             </a>
@@ -41,7 +41,7 @@
                 <i class="fas fa-stream"></i>
                 <span>Add_Taxis</span>
             </a>
-            <a href="/corridas">
+            <a href="/corridas" class="active">
                 <i class="fas fa-calendar"></i>
                 <span>Corridas</span>
             </a>
@@ -67,14 +67,14 @@
                 <div class="formulario-div">
                 @csrf
                 
-                    <form class="formulario" action="{{ route('editar_taxis3', ['id' => $responseArray['id']]) }}"  method="get"> 
+                    <form class="formulario" action="{{ route('editar_statusb', ['id' => $responseArray['id']]) }}"  method="get"> 
                     
                     <div class="form-group">
-                        <label>Nome do taxista</label>
-                        <input type="text" value="" placeholder="{{$responseArray['name_motorista']}}" name="name_motorista" required>
+                        <label>Status</label>
+                        <input type="text" value="" placeholder="{{$responseArray['status_corrida']}}" name="status" required>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="">Editar Taxi</button>
+                        <button type="submit" class="">Editar Status</button>
                     </div>
 
                     </form>

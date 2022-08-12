@@ -82,4 +82,32 @@ class consumirapiController extends Controller
             ]);
             return redirect('/taxis');
     }
+
+    //------------------------------------------------------------------
+    //------------------------------------------------------------------
+    //                            Corridas
+    //------------------------------------------------------------------
+    //listar Corridas
+    public function todascorridas(){
+        $response = Http::get('http://127.0.0.1:8090/corridas');
+        $responseArray = $response->json();
+        return view('corridas', compact('responseArray'));
+    }
+    //Editar Status Corridas
+    public function editarstatus($id){
+        $id2 = intval($id);
+        $response = Http::get('http://127.0.0.1:8090/corridas/'. $id2);
+        $responseArray = $response->json();
+        return view('/editarstatuscorrida', compact('responseArray'));
+    }
+    public function editarstatusb($id, Request $request){
+        $id2 = intval($id);
+        $response = Http::put('http://127.0.0.1:8090/corridas/'. $id2,[
+            'status_corrida' => $request->input('status'),
+            ]);
+            return redirect('/corridas');
+    }
+    //
+
+
 }

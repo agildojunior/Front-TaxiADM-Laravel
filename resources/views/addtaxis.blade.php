@@ -41,7 +41,7 @@
                 <i class="fas fa-stream"></i>
                 <span>Add_Taxis</span>
             </a>
-            <a href="#">
+            <a href="/corridas">
                 <i class="fas fa-calendar"></i>
                 <span>Corridas</span>
             </a>

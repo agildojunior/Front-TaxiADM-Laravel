@@ -41,7 +41,7 @@
                 <i class="fas fa-stream"></i>
                 <span>Add_Taxis</span>
             </a>
-            <a href="#">
+            <a href="/corridas">
                 <i class="fas fa-calendar"></i>
                 <span>Corridas</span>
             </a>
@@ -85,15 +85,9 @@
                             <td>Pau dos Ferros RN</td>
                             <td class="tdform">
                                 <form class="formulario" action="" method="get"> 
-                                    <!-- <select name="id" id="id">
-                                        <option value="{{ $empresa['id'] }}">{{ $empresa['id'] }}</option>
-                                    </select> -->
                                     <button type="submit" class="buttondelete">Apagar</button>
                                 </form>
                                 <form class="formulario" action="{{ route('editar_empresas', ['id' => $empresa['id']]) }}" method="get"> 
-                                    <!-- <select name="id" id="id">
-                                        <option value="{{ $empresa['id'] }}">{{ $empresa['id'] }}</option>
-                                    </select> -->
                                     <button type="submit" class="buttonedit">Editar</button>
                                 </form>
                             </td>

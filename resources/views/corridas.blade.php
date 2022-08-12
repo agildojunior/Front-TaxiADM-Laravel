@@ -33,7 +33,7 @@
                 <i class="fas fa-link"></i>
                 <span>Add_Empresas</span>
             </a>
-            <a href="/taxis" class="active">
+            <a href="/taxis">
                 <i class="fas fa-stream"></i>
                 <span>Taxis</span>
             </a>
@@ -41,7 +41,7 @@
                 <i class="fas fa-stream"></i>
                 <span>Add_Taxis</span>
             </a>
-            <a href="/corridas">
+            <a href="/corridas" class="active">
                 <i class="fas fa-calendar"></i>
                 <span>Corridas</span>
             </a>
@@ -70,22 +70,29 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Nome</th>
+                            <th>ID_empresa</th>
+                            <th>Num_taxi</th>
+                            <th>Status</th>
+                            <th>Cliente</th>
+                            <th>Destino</th>
+                            <th>Origem</th>
                             <th>...</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($responseArray as $taxi)
+                        @foreach($responseArray as $corridas)
                         <tr>
-                            <td>{{ $taxi['id'] }}</td>
-                            <td>{{ $taxi['name_motorista'] }}</td>
-                            <!-- <td>Pau dos Ferros RN</td> -->
+                            <td>{{ $corridas['id'] }}</td>
+                            <td>{{ $corridas['id_empresa'] }}</td>
+                            <td>{{ $corridas['id_taxis'] }}</td>
+                            <td>{{ $corridas['status_corrida'] }}</td>
+                            <td>{{ $corridas['cliente'] }}</td>
+                            <td>{{ $corridas['destino'] }}</td>
+                            <td>{{ $corridas['origem'] }}</td>
+
                             <td class="tdform">
-                                <form class="formulario" action="" method="get"> 
-                                    <button type="submit" class="buttondelete">Apagar</button>
-                                </form>
-                                <form class="formulario" action="{{ route('editar_taxis', ['id' => $taxi['id']]) }}" method="get"> 
-                                    <button type="submit" class="buttonedit">Editar</button>
+                                <form class="formulario" action="{{ route('editar_status', ['id' => $corridas['id']]) }}" method="get"> 
+                                    <button type="submit" class="buttonstatus">EditarStatus</button>
                                 </form>
                             </td>
                         </tr>
