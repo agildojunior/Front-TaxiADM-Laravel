@@ -69,10 +69,9 @@
                             <th>Origem</th>
                             <th>Destino</th>
                             <th>Status</th>
-                            <th>ID_Cliente</th>
-                            <th>ID_Empresa</th>
+                            <th>Cliente</th>
+                            <th>Empresa</th>
                             <th>ID_Taxi</th>
-                            <th>ID_Endereço</th>
                             <th>...</th>
                         </tr>
                     </thead>
@@ -86,7 +85,6 @@
                             <td>{{ $corridas['id_usuario'] }}</td>
                             <td>{{ $corridas['id_empresa'] }}</td>
                             <td>{{ $corridas['id_taxi'] }}</td>
-                            <td>{{ $corridas['id_endereco'] }}</td>
 
                             <td class="tdform">
                                 <form class="formulario" action="{{ route('editar_status', ['id' => $corridas['id_corrida']]) }}" method="get"> 
