@@ -67,11 +67,23 @@
                 <div class="formulario-div">
                 @csrf
                 
-                    <form class="formulario" action="{{ route('editar_taxis3', ['id' => $responseArray['id']]) }}"  method="get"> 
+                    <form class="formulario" action="{{ route('editar_taxis3', ['id' => $responseArray['id_taxis']]) }}"  method="get"> 
                     
                     <div class="form-group">
-                        <label>Nome do taxista</label>
-                        <input type="text" value="" placeholder="{{$responseArray['name_motorista']}}" name="name_motorista" required>
+                        <label>Nome do Motorista</label>
+                        <input type="text" placeholder="{{$responseArray['nome_taxista']}}" name="nome_taxista" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Telefone do Motorista</label>
+                        <input type="text" placeholder="{{$responseArray['telefone_taxista']}}" name="telefone_taxista" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Modelo do carro</label>
+                        <input type="text" placeholder="{{$responseArray['modelo_taxi']}}" name="modelo_taxi" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Placa do carro</label>
+                        <input type="text" placeholder="{{$responseArray['placa_taxi']}}" name="placa_taxi" required>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="">Editar Taxi</button>

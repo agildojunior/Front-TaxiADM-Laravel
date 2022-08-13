@@ -71,20 +71,26 @@
                         <tr>
                             <th>#</th>
                             <th>Nome</th>
+                            <th>Telefone</th>
+                            <th>Modelo</th>
+                            <th>Placa</th>
                             <th>...</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($responseArray as $taxi)
                         <tr>
-                            <td>{{ $taxi['id'] }}</td>
-                            <td>{{ $taxi['name_motorista'] }}</td>
+                            <td>{{ $taxi['id_taxis'] }}</td>
+                            <td>{{ $taxi['nome_taxista'] }}</td>
+                            <td>{{ $taxi['telefone_taxista'] }}</td>
+                            <td>{{ $taxi['modelo_taxi'] }}</td>
+                            <td>{{ $taxi['placa_taxi'] }}</td>
                             <!-- <td>Pau dos Ferros RN</td> -->
                             <td class="tdform">
                                 <form class="formulario" action="" method="get"> 
                                     <button type="submit" class="buttondelete">Apagar</button>
                                 </form>
-                                <form class="formulario" action="{{ route('editar_taxis', ['id' => $taxi['id']]) }}" method="get"> 
+                                <form class="formulario" action="{{ route('editar_taxis', ['id' => $taxi['id_taxis']]) }}" method="get"> 
                                     <button type="submit" class="buttonedit">Editar</button>
                                 </form>
                             </td>

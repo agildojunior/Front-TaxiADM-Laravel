@@ -79,15 +79,15 @@
                     <tbody>
                         @foreach($responseArray as $empresa)
                         <tr>
-                            <td>{{ $empresa['id'] }}</td>
-                            <td>{{ $empresa['name'] }}</td>
+                            <td>{{ $empresa['id_empresa'] }}</td>
+                            <td>{{ $empresa['nome'] }}</td>
                             <td>{{ $empresa['cnpj'] }}</td>
                             <td>Pau dos Ferros RN</td>
                             <td class="tdform">
                                 <form class="formulario" action="" method="get"> 
                                     <button type="submit" class="buttondelete">Apagar</button>
                                 </form>
-                                <form class="formulario" action="{{ route('editar_empresas', ['id' => $empresa['id']]) }}" method="get"> 
+                                <form class="formulario" action="{{ route('editar_empresas', ['id' => $empresa['id_empresa']]) }}" method="get"> 
                                     <button type="submit" class="buttonedit">Editar</button>
                                 </form>
                             </td>

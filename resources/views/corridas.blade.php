@@ -70,28 +70,30 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>ID_empresa</th>
-                            <th>Num_taxi</th>
-                            <th>Status</th>
-                            <th>Cliente</th>
-                            <th>Destino</th>
                             <th>Origem</th>
+                            <th>Destino</th>
+                            <th>Status</th>
+                            <th>ID_Cliente</th>
+                            <th>ID_Empresa</th>
+                            <th>ID_Taxi</th>
+                            <th>ID_Endereço</th>
                             <th>...</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($responseArray as $corridas)
                         <tr>
-                            <td>{{ $corridas['id'] }}</td>
-                            <td>{{ $corridas['id_empresa'] }}</td>
-                            <td>{{ $corridas['id_taxis'] }}</td>
-                            <td>{{ $corridas['status_corrida'] }}</td>
-                            <td>{{ $corridas['cliente'] }}</td>
-                            <td>{{ $corridas['destino'] }}</td>
+                            <td>{{ $corridas['id_corrida'] }}</td>
                             <td>{{ $corridas['origem'] }}</td>
+                            <td>{{ $corridas['destino'] }}</td>
+                            <td>{{ $corridas['status'] }}</td>
+                            <td>{{ $corridas['id_usuario'] }}</td>
+                            <td>{{ $corridas['id_empresa'] }}</td>
+                            <td>{{ $corridas['id_taxi'] }}</td>
+                            <td>{{ $corridas['id_endereco'] }}</td>
 
                             <td class="tdform">
-                                <form class="formulario" action="{{ route('editar_status', ['id' => $corridas['id']]) }}" method="get"> 
+                                <form class="formulario" action="{{ route('editar_status', ['id' => $corridas['id_corrida']]) }}" method="get"> 
                                     <button type="submit" class="buttonstatus">EditarStatus</button>
                                 </form>
                             </td>

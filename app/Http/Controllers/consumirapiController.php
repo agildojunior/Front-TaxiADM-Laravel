@@ -23,7 +23,7 @@ class consumirapiController extends Controller
     public function adicionarempresas(Request $request){
         $dados = $request->all();
         $response = Http::post('http://127.0.0.1:8090/empresas',[
-        'name' => $request->input('nomeEmpresa'),
+        'nome' => $request->input('nomeEmpresa'),
         'cnpj' => $request->input('cnpj')
         ]);
         return redirect('/empresas');
@@ -38,7 +38,7 @@ class consumirapiController extends Controller
     public function editarempresas3($id, Request $request){
         $id2 = intval($id);
         $response = Http::put('http://127.0.0.1:8090/empresas/'. $id2,[
-            'name' => $request->input('nomeEmpresa'),
+            'nome' => $request->input('nomeEmpresa'),
             'cnpj' => $request->input('cnpj')
             ]);
             return redirect('/empresas');
@@ -58,7 +58,10 @@ class consumirapiController extends Controller
     public function adicionartaxis(Request $request){
         $dados = $request->all();
         $response = Http::post('http://127.0.0.1:8090/taxis',[
-        'name_motorista' => $request->input('name_motorista'),
+        'nome_taxista' => $request->input('nome_taxista'),
+        'telefone_taxista' => $request->input('telefone_taxista'),
+        'modelo_taxi' => $request->input('modelo_taxi'),
+        'placa_taxi' => $request->input('placa_taxi')
         ]);
         return redirect('/taxis');
     }
@@ -72,7 +75,10 @@ class consumirapiController extends Controller
     public function editartaxis3($id, Request $request){
         $id2 = intval($id);
         $response = Http::put('http://127.0.0.1:8090/taxis/'. $id2,[
-            'name_motorista' => $request->input('name_motorista'),
+            'nome_taxista' => $request->input('nome_taxista'),
+            'telefone_taxista' => $request->input('telefone_taxista'),
+            'modelo_taxi' => $request->input('modelo_taxi'),
+            'placa_taxi' => $request->input('placa_taxi')
             ]);
             return redirect('/taxis');
     }
@@ -97,7 +103,7 @@ class consumirapiController extends Controller
     public function editarstatusb($id, Request $request){
         $id2 = intval($id);
         $response = Http::put('http://127.0.0.1:8090/corridas/'. $id2,[
-            'status_corrida' => $request->input('status'),
+            'status' => $request->input('status'),
             ]);
             return redirect('/corridas');
     }

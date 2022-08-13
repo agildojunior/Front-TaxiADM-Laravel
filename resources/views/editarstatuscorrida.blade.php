@@ -67,7 +67,7 @@
                 <div class="formulario-div">
                 @csrf
                 
-                    <form class="formulario" action="{{ route('editar_statusb', ['id' => $responseArray['id']]) }}"  method="get"> 
+                    <form class="formulario" action="{{ route('editar_statusb', ['id' => $responseArray['id_corrida']]) }}"  method="get"> 
                     
                     <div class="form-group">
                         <label>Status</label>
@@ -78,7 +78,6 @@
                                 <option value="Finalizada">Finalizada</option>
                             </select>
                             
-                        <!-- <input type="text" value="" placeholder="{{$responseArray['status_corrida']}}" name="status" required> -->
                     </div>
                     <div class="form-group">
                         <button type="submit" class="">Editar Status</button>

@@ -70,7 +70,19 @@
 
                     <div class="form-group">
                         <label>Nome do Motorista</label>
-                        <input type="text" placeholder="Digite o título" name="name_motorista" required>
+                        <input type="text" placeholder="Digite o título" name="nome_taxista" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Telefone do Motorista</label>
+                        <input type="text" placeholder="Digite o título" name="telefone_taxista" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Modelo do carro</label>
+                        <input type="text" placeholder="Digite o título" name="modelo_taxi" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Placa do carro</label>
+                        <input type="text" placeholder="Digite o título" name="placa_taxi" required>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="">Adicionar Taxi</button>

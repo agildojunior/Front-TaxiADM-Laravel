@@ -67,11 +67,11 @@
                 <div class="formulario-div">
                 @csrf
                 
-                    <form class="formulario" action="{{ route('editar_empresas3', ['id' => $responseArray['id']]) }}"  method="get"> 
+                    <form class="formulario" action="{{ route('editar_empresas3', ['id' => $responseArray['id_empresa']]) }}"  method="get"> 
                     
                     <div class="form-group">
                         <label>Nome da empresa</label>
-                        <input type="text" value="" placeholder="{{$responseArray['name']}}" name="nomeEmpresa" required>
+                        <input type="text" value="" placeholder="{{$responseArray['nome']}}" name="nomeEmpresa" required>
                     </div>
                     <div class="form-group">
                         <label>cnpj</label>
