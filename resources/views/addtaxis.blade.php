@@ -49,10 +49,6 @@
                 <i class="fas fa-question-circle"></i>
                 <span>Usuarios</span>
             </a>
-            <a href="#">
-                <i class="fas fa-question-circle"></i>
-                <span>Add_Usuarios</span>
-            </a>
             <a href="/">
                 <i class="fas fa-envelope"></i>
                 <span>Deslogar</span>
@@ -70,19 +66,19 @@
 
                     <div class="form-group">
                         <label>Nome do Motorista</label>
-                        <input type="text" placeholder="Digite o título" name="nome_taxista" required>
+                        <input type="text" placeholder="Nome do taxista" name="nome_taxista" required>
                     </div>
                     <div class="form-group">
                         <label>Telefone do Motorista</label>
-                        <input type="text" placeholder="Digite o título" name="telefone_taxista" required>
+                        <input type="text" placeholder="Telefone" name="telefone_taxista" required>
                     </div>
                     <div class="form-group">
                         <label>Modelo do carro</label>
-                        <input type="text" placeholder="Digite o título" name="modelo_taxi" required>
+                        <input type="text" placeholder="Modelo do Taxi" name="modelo_taxi" required>
                     </div>
                     <div class="form-group">
                         <label>Placa do carro</label>
-                        <input type="text" placeholder="Digite o título" name="placa_taxi" required>
+                        <input type="text" placeholder="Placa do Taxi" name="placa_taxi" required>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="">Adicionar Taxi</button>

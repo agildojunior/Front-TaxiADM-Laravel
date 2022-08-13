@@ -47,10 +47,6 @@
                 <i class="fas fa-question-circle"></i>
                 <span>Usuarios</span>
             </a>
-            <a href="#">
-                <i class="fas fa-question-circle"></i>
-                <span>Add_Usuarios</span>
-            </a>
             <a href="/">
                 <i class="fas fa-envelope"></i>
                 <span>Deslogar</span>

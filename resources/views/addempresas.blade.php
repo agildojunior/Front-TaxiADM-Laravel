@@ -49,10 +49,6 @@
                 <i class="fas fa-question-circle"></i>
                 <span>Usuarios</span>
             </a>
-            <a href="#">
-                <i class="fas fa-question-circle"></i>
-                <span>Add_Usuarios</span>
-            </a>
             <a href="/">
                 <i class="fas fa-envelope"></i>
                 <span>Deslogar</span>
@@ -70,11 +66,11 @@
 
                     <div class="form-group">
                         <label>Nome da empresa</label>
-                        <input type="text" placeholder="Digite o título" name="nomeEmpresa" required>
+                        <input type="text" placeholder="Nome da empresa" name="nomeEmpresa" required>
                     </div>
                     <div class="form-group">
-                        <label>cnpj</label>
-                        <input type="text" placeholder="Digite o título" name="cnpj" required>
+                        <label>CNPJ</label>
+                        <input type="text" placeholder="CNPJ da empresa" name="cnpj" required>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="">Adicionar Empresa</button>
