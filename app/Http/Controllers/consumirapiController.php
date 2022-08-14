@@ -107,7 +107,37 @@ class consumirapiController extends Controller
             ]);
             return redirect('/corridas');
     }
-    //
-
+    
+    //------------------------------------------------------------------
+    //------------------------------------------------------------------
+    //                          Painel Taxista
+    //------------------------------------------------------------------
+    //corridas disponiveis
+    public function corridasDispo(){
+        $response = Http::get('http://127.0.0.1:8090/corridas');
+        $responseArray = $response->json();
+        return view('taxistaCorridasDisponiveis', compact('responseArray'));
+    }
+    public function aceitarCorrida($id){
+        $id2 = intval($id);
+        $response = Http::put('http://127.0.0.1:8090/corridas/'. $id2,[
+            'id_taxi' => 1, //o ID sera mudado para o id do taxi do motorista que estiver logado, coloquei o numero 1 somente de exemplo.
+            'status' => "Aceita",
+            ]);
+            return redirect('/taxistaCorridasDisponiveis');
+    }
+    //minhas corridas 
+    public function minhasCorridas(){
+        $response = Http::get('http://127.0.0.1:8090/corridas');
+        $responseArray = $response->json();
+        return view('CorridasAceitas', compact('responseArray'));
+    }
+    public function finalizarCorrida($id){
+        $id2 = intval($id);
+        $response = Http::put('http://127.0.0.1:8090/corridas/'. $id2,[
+            'status' => "Finalizada",
+            ]);
+            return redirect('/CorridasAceitas');
+    }
 
 }

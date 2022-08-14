@@ -48,6 +48,14 @@ Route::get('/corridas', function () {
     return view('corridas');
 });
 
+Route::get('/taxistaCorridasDisponiveis', function () {
+    return view('taxistaCorridasDisponiveis');
+});
+
+Route::get('/CorridasAceitas', function () {
+    return view('CorridasAceitas');
+});
+
 Route::get('/editarstatuscorrida', function () {
     return view('editarstatuscorrida');
 });
@@ -77,3 +85,10 @@ Route::get('/corridas', [consumirapiController::class, 'todascorridas']);
 
 Route::get('/editarstatus{id}', [consumirapiController::class, 'editarstatus'])->name('editar_status');
 Route::get('/editarstatusb/{id}', [consumirapiController::class, 'editarstatusb'])->name('editar_statusb');
+
+//-----------------------------------------------------------------------------------
+//Painel Taxista
+Route::get('/taxistaCorridasDisponiveis', [consumirapiController::class, 'corridasDispo']);
+Route::get('/aceitarCorrida/{id}', [consumirapiController::class, 'aceitarCorrida'])->name('aceitar_Corrida');
+Route::get('/CorridasAceitas', [consumirapiController::class, 'minhasCorridas']);
+Route::get('/finalizarCorrida/{id}', [consumirapiController::class, 'finalizarCorrida'])->name('finalizar_Corrida');
