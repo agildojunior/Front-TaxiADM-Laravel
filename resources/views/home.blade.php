@@ -43,10 +43,10 @@
                 <i class="fas fa-calendar"></i>
                 <span>Corridas</span>
             </a>
-            <a href="#">
+            <!-- <a href="#">
                 <i class="fas fa-question-circle"></i>
                 <span>Usuarios</span>
-            </a>
+            </a> -->
             <a href="/">
                 <i class="fas fa-envelope"></i>
                 <span>Deslogar</span>
