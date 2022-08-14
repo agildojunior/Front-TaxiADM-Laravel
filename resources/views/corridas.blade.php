@@ -82,7 +82,7 @@
                             <td>{{ $corridas['origem'] }}</td>
                             <td>{{ $corridas['destino'] }}</td>
                             <td>{{ $corridas['status'] }}</td>
-                            <td>{{ $corridas['id_usuario'] }}</td>
+                            <td>{{ $corridas['nome_usuario'] }}</td>
                             <td>{{ $corridas['id_empresa'] }}</td>
                             <td>{{ $corridas['id_taxi'] }}</td>
 
