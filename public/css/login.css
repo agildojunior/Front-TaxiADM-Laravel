@@ -57,7 +57,7 @@ body{
     padding: 5px;
     font-size: 18px;
     cursor: pointer;
-    margin: 12px 0;
+    margin: 12px 0px 0px 0px;
 }
 .btn:hover{
     background-color: #afad4c67;
