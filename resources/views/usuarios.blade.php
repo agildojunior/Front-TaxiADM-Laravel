@@ -41,11 +41,11 @@
                 <i class="fas fa-stream"></i>
                 <span>Add_Taxis</span>
             </a>
-            <a href="/corridas" class="active">
+            <a href="/corridas">
                 <i class="fas fa-calendar"></i>
                 <span>Corridas</span>
             </a>
-            <a href="/usuarios">
+            <a href="/usuarios" class="active">
                 <i class="fas fa-question-circle"></i>
                 <span>Usuarios</span>
             </a>
@@ -66,29 +66,24 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Origem</th>
-                            <th>Destino</th>
-                            <th>Status</th>
-                            <th>Cliente</th>
-                            <th>Empresa</th>
-                            <th>ID_Taxi</th>
+                            <th>nome</th>
+                            <th>email</th>
+                            <th>tipo</th>
                             <th>...</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($responseArray as $corridas)
+                        @foreach($responseArray as $usuario)
                         <tr>
-                            <td>{{ $corridas['id_corrida'] }}</td>
-                            <td>{{ $corridas['origem'] }}</td>
-                            <td>{{ $corridas['destino'] }}</td>
-                            <td>{{ $corridas['status'] }}</td>
-                            <td>{{ $corridas['nome_usuario'] }}</td>
-                            <td>{{ $corridas['id_empresa'] }}</td>
-                            <td>{{ $corridas['id_taxi'] }}</td>
+                            <td>{{ $usuario['id_usuario'] }}</td>
+                            <td>{{ $usuario['nome_usuario'] }}</td>
+                            <td>{{ $usuario['email_usuario'] }}</td>
+                            <td>{{ $usuario['tipo_usuario'] }}</td>
+
 
                             <td class="tdform">
-                                <form class="formulario" action="{{ route('editar_status', ['id' => $corridas['id_corrida']]) }}" method="get"> 
-                                    <button type="submit" class="buttonstatus">EditarStatus</button>
+                                <form class="formulario" action="" method="get"> 
+                                    <button type="submit" class="buttonstatus">Editar</button>
                                 </form>
                             </td>
                         </tr>

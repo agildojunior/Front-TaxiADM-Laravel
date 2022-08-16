@@ -20,6 +20,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/cadastro', function () {
+    return view('cadastroUsuario');
+});
+
 Route::get('/home', function () {
     return view('home');
 });
@@ -46,6 +50,10 @@ Route::get('/addtaxis', function () {
 
 Route::get('/corridas', function () {
     return view('corridas');
+});
+
+Route::get('/usuarios', function () {
+    return view('usuarios');
 });
 
 Route::get('/taxistaCorridasDisponiveis', function () {
@@ -92,3 +100,8 @@ Route::get('/taxistaCorridasDisponiveis', [consumirapiController::class, 'corrid
 Route::get('/aceitarCorrida/{id}', [consumirapiController::class, 'aceitarCorrida'])->name('aceitar_Corrida');
 Route::get('/CorridasAceitas', [consumirapiController::class, 'minhasCorridas']);
 Route::get('/finalizarCorrida/{id}', [consumirapiController::class, 'finalizarCorrida'])->name('finalizar_Corrida');
+
+//-----------------------------------------------------------------------------------
+//usuarios
+Route::get('/usuarios', [consumirapiController::class, 'todosUsuarios']);
+Route::get('/adicionarUsuario', [consumirapiController::class, 'adicionarUsuario']);

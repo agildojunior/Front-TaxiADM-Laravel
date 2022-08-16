@@ -27,7 +27,7 @@
 
             <a href="/home"><input class="btn" type="button" name="" value="Logar Admin"></a>
             <a href="/taxistaCorridasDisponiveis"><input class="btn" type="button" name="" value="Logar Taxista"></a>
-            <input class="btn2" type="button" name="" value="Cadastro">
+            <a href="/cadastro"><input class="btn2" type="button" name="" value="Cadastro"></a>
 
         </div>
         

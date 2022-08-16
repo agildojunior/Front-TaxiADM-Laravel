@@ -31,3 +31,15 @@ body{
     transition: all .5s ease;
     /* box-shadow: 0 0 2em black; */
 }
+
+.container3{
+    /* background-color: rgb(255, 255, 255); */
+    border-radius: 20px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    margin: 90px;
+    flex-direction: column;
+    transition: all .5s ease;
+    /* box-shadow: 0 0 2em black; */
+}

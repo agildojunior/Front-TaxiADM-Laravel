@@ -12,6 +12,19 @@
     background-color: #1b1b1b;
 }
 
+.cadastro-div{
+    color: white;
+    min-height: 500px;
+    max-width: 600px;
+    background-color: aliceblue;
+    font-family: 'Montserrat' , sans-serif;
+    align-items: center;
+    text-align: left;
+    justify-content: center;
+    border:1px solid black;
+    background-color: #1b1b1b;
+}
+
 .formulario{
     padding: 20px 50px 20px 20px;
 }

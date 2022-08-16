@@ -45,10 +45,10 @@
                 <i class="fas fa-calendar"></i>
                 <span>Corridas</span>
             </a>
-            <!-- <a href="#">
+            <a href="/usuarios">
                 <i class="fas fa-question-circle"></i>
                 <span>Usuarios</span>
-            </a> -->
+            </a>
             <a href="/">
                 <i class="fas fa-envelope"></i>
                 <span>Deslogar</span>
@@ -66,7 +66,7 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Nome</th>
+                            <th>Motorista</th>
                             <th>Telefone</th>
                             <th>Modelo</th>
                             <th>Placa</th>
