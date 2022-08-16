@@ -237,6 +237,13 @@ class consumirapiController extends Controller
             ]);
             return redirect('/usuarios');
     }
-
+    //------------------------------------------------------------------
+    //------------------------------------------------------------------
+    //                             Login
+    //------------------------------------------------------------------
+    //Login
+    public function logar(Request $request){
+        
+    }
 
 }

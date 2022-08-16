@@ -109,6 +109,8 @@ Route::get('/finalizarCorrida/{id}', [consumirapiController::class, 'finalizarCo
 
 //-----------------------------------------------------------------------------------
 //usuarios
+Route::get('/logar', [consumirapiController::class, 'logar']);
+
 Route::get('/usuarios', [consumirapiController::class, 'todosUsuarios']);
 
 Route::get('/adicionarUsuario', [consumirapiController::class, 'adicionarUsuario']);
