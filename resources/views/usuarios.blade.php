@@ -69,6 +69,7 @@
                             <th>nome</th>
                             <th>email</th>
                             <th>tipo</th>
+                            <th>taxi</th>
                             <th>...</th>
                         </tr>
                     </thead>
@@ -79,11 +80,14 @@
                             <td>{{ $usuario['nome_usuario'] }}</td>
                             <td>{{ $usuario['email_usuario'] }}</td>
                             <td>{{ $usuario['tipo_usuario'] }}</td>
-
+                            <td>{{ $usuario['id_taxis'] }}</td>
 
                             <td class="tdform">
                                 <form class="formulario" action="" method="get"> 
-                                    <button type="submit" class="buttonstatus">Editar</button>
+                                    <button type="submit" class="buttondelete">Apagar</button>
+                                </form>
+                                <form class="formulario" action="{{ route('editar_usuariob', ['id' => $usuario['id_usuario']]) }}" method="get"> 
+                                    <button type="submit" class="buttonedit">Editar</button>
                                 </form>
                             </td>
                         </tr>

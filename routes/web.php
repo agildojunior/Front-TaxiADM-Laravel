@@ -56,6 +56,10 @@ Route::get('/usuarios', function () {
     return view('usuarios');
 });
 
+Route::get('/editarusuarios', function () {
+    return view('editarusuarios');
+});
+
 Route::get('/taxistaCorridasDisponiveis', function () {
     return view('taxistaCorridasDisponiveis');
 });
@@ -97,11 +101,17 @@ Route::get('/editarstatusb/{id}', [consumirapiController::class, 'editarstatusb'
 //-----------------------------------------------------------------------------------
 //Painel Taxista
 Route::get('/taxistaCorridasDisponiveis', [consumirapiController::class, 'corridasDispo']);
+
 Route::get('/aceitarCorrida/{id}', [consumirapiController::class, 'aceitarCorrida'])->name('aceitar_Corrida');
 Route::get('/CorridasAceitas', [consumirapiController::class, 'minhasCorridas']);
+
 Route::get('/finalizarCorrida/{id}', [consumirapiController::class, 'finalizarCorrida'])->name('finalizar_Corrida');
 
 //-----------------------------------------------------------------------------------
 //usuarios
 Route::get('/usuarios', [consumirapiController::class, 'todosUsuarios']);
+
 Route::get('/adicionarUsuario', [consumirapiController::class, 'adicionarUsuario']);
+
+Route::get('/editarusuariosb{id}', [consumirapiController::class, 'editarusuariosb'])->name('editar_usuariob');
+Route::get('/editarusuarios3/{id}', [consumirapiController::class, 'editarusuarios3'])->name('editar_usuario3');

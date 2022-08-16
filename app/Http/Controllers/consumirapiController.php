@@ -199,8 +199,6 @@ class consumirapiController extends Controller
         $responseArray = $response->json();
         return view('usuarios', compact('responseArray'));
     }
-
-    
     //Adicionar Usuarios  
     public function adicionarUsuario(Request $request){
         $header = [
@@ -215,8 +213,30 @@ class consumirapiController extends Controller
         ]);
         return redirect('/');
     }
+    //editar usuarios
+    public function editarusuariosb($id){
+        $header = [
+            'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
+        ];
+        $id2 = intval($id);
+        $response = Http::withHeaders($header)->get('http://127.0.0.1:8090/usuarios/'. $id2);
+        $responseArray = $response->json();
+        return view('/editarusuarios', compact('responseArray'));
+    }
+    public function editarusuarios3($id, Request $request){
+        $header = [
+            'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
+        ];
+        $id2 = intval($id);
+        $response = Http::withHeaders($header)->put('http://127.0.0.1:8090/usuarios/'. $id2,[
+            'nome_usuario' => $request->input('nome'),
+            'email_usuario' => $request->input('email'),
+            'senha_usuario' => $request->input('senha'),
+            'tipo_usuario' => $request->input('tipo'),
+            'id_taxis' => $request->input('taxi')
+            ]);
+            return redirect('/usuarios');
+    }
+
 
 }
-
-
-    
