@@ -4,11 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Cookie;
+
 
 class consumirapiController extends Controller
 {
-    //
-    
+    //cookie
+    public function setCookie_logado($ID_logado){
+        Cookie::queue('cookie_logado', $ID_logado);
+    }
+
+    public function getCookie_logado(){
+        $cookieValue = Cookie::get('cookie_logado');
+        return response()->json($cookieValue);
+    }
+
     //------------------------------------------------------------------
     //------------------------------------------------------------------
     //                            Empresas
@@ -161,6 +171,7 @@ class consumirapiController extends Controller
         ];
         $id2 = intval($id);
         $response = Http::withHeaders($header)->put('http://127.0.0.1:8090/corridas/'. $id2,[
+            
             'id_taxi' => 1, //o ID sera mudado para o id do taxi do motorista que estiver logado, coloquei o numero 1 somente de exemplo.
             'status' => "Aceita",
             ]);
@@ -254,6 +265,8 @@ class consumirapiController extends Controller
             return redirect('/');
         }
         if($log['tipo_usuario'] == 'taxista'){
+            // $ID_logado = intval($log['id_usuario']);
+            // setCookie_logado($ID_logado);
             if($log['email_usuario'] == $email && $log['senha_usuario'] == $senha ){
                 return redirect('/taxistaCorridasDisponiveis');
             }
