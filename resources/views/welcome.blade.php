@@ -19,17 +19,15 @@
 
                 <div class="textbox">
                     <i class="fa fa-user" aria-hidden="true"></i>
-                    <input type="email"placeholder="Email" name="email">
+                    <input type="text"placeholder="Email" name="email">
                 </div>
 
                 <div class="textbox">
                     <i class="fa fa-lock" aria-hidden="true"></i>
-                    <input type="password"placeholder="Senha" name="email">
+                    <input type="password"placeholder="Senha" name="senha">
                 </div>
 
                 <button class="btn" type="submit" class="">Login</button>
-                <a href="/home"><input class="btn" type="button" name="" value="Admin ID=1 para testes"></a>
-                <a href="/taxistaCorridasDisponiveis"><input class="btn" type="button" name="" value="Taxista ID=1 para testes"></a>
                 <a href="/cadastro"><input class="btn2" type="button" name="" value="Cadastro"></a>
 
             </form>

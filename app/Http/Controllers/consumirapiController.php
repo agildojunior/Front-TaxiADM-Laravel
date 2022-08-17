@@ -243,6 +243,26 @@ class consumirapiController extends Controller
     //------------------------------------------------------------------
     //Login
     public function logar(Request $request){
+        $header = [
+            'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
+        ];
+        $email = $request->input('email');
+        $senha = $request->input('senha');
+        $response = Http::withHeaders($header)->get('http://127.0.0.1:8090/usuarios/email/'. $email);
+        $log = $response->json();
+        if($log == null){
+            return redirect('/');
+        }
+        if($log['tipo_usuario'] == 'taxista'){
+            if($log['email_usuario'] == $email && $log['senha_usuario'] == $senha ){
+                return redirect('/taxistaCorridasDisponiveis');
+            }
+        }
+        if($log['tipo_usuario'] == 'admin'){
+            if($log['email_usuario'] == $email && $log['senha_usuario'] == $senha ){
+                return redirect('/home');
+            }
+        }
         
     }
 
