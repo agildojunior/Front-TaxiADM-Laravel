@@ -87,6 +87,7 @@ class consumirapiController extends Controller
         ];
         $dados = $request->all();
         $response = Http::withHeaders($header)->post('http://127.0.0.1:8090/taxis',[
+        'id_usuario' => $request->input('id_usuario'),
         'telefone_taxista' => $request->input('telefone_taxista'),
         'modelo_taxi' => $request->input('modelo_taxi'),
         'placa_taxi' => $request->input('placa_taxi')
@@ -109,6 +110,7 @@ class consumirapiController extends Controller
         ];
         $id2 = intval($id);
         $response = Http::withHeaders($header)->put('http://127.0.0.1:8090/taxis/'. $id2,[
+            'id_usuario' => $request->input('id_usuario'),
             'telefone_taxista' => $request->input('telefone_taxista'),
             'modelo_taxi' => $request->input('modelo_taxi'),
             'placa_taxi' => $request->input('placa_taxi')
@@ -170,15 +172,9 @@ class consumirapiController extends Controller
         $id2 = intval($id);
         //pegando o id do usuario logado
         $ID_logado = intval(getCookie_logado());
-        //pegando insformaçoes do usuario logado
-        $Usuario_logado = Http::withHeaders($header)->get('http://127.0.0.1:8090/usuarios/'. $id2);
-        //transformando dados do json
-        $Usuario_logado2 = $Usuario_logado->json();
-        //pegando somente o id do taxi
-        $ID_taxiLog = $Usuario_logado2['id_taxis'];
         //aceitando corrida
         $response = Http::withHeaders($header)->put('http://127.0.0.1:8090/corridas/'. $id2,[
-            'id_taxi' => $ID_taxiLog, //o ID sera mudado para o id do taxi do motorista que estiver logado, coloquei o numero 1 somente de exemplo.
+            'id_taxi' => $ID_logado, 
             'status' => "Aceita",
             ]);
             return redirect('/taxistaCorridasDisponiveis');
@@ -188,9 +184,10 @@ class consumirapiController extends Controller
         $header = [
             'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
         ];
+        $ID_logado = intval(getCookie_logado());
         $response = Http::withHeaders($header)->get('http://127.0.0.1:8090/corridas');
         $responseArray = $response->json();
-        return view('CorridasAceitas', compact('responseArray'));
+        return view('CorridasAceitas', compact('responseArray','ID_logado'));
     }
     public function finalizarCorrida($id){
         $header = [
@@ -249,8 +246,7 @@ class consumirapiController extends Controller
             'nome_usuario' => $request->input('nome'),
             'email_usuario' => $request->input('email'),
             'senha_usuario' => $request->input('senha'),
-            'tipo_usuario' => $request->input('tipo'),
-            'id_taxis' => $request->input('taxi')
+            'tipo_usuario' => $request->input('tipo')
             ]);
             return redirect('/usuarios');
     }

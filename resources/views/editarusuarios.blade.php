@@ -84,10 +84,7 @@
                             <option value="taxista">taxista</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label>Atribuir Taxi   *Opcional</label>
-                        <input type="text" placeholder="Id do taxi." name="taxi">
-                    </div>
+                    
                     <div class="form-group">
                         <button type="submit" class="">Editar Usuario</button>
                     </div>

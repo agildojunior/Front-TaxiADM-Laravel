@@ -71,7 +71,7 @@
                             <th>Status</th>
                             <th>Cliente</th>
                             <th>Empresa</th>
-                            <th>ID_Taxi</th>
+                            <th>Cod.Taxista</th>
                             <th>...</th>
                         </tr>
                     </thead>

@@ -69,7 +69,6 @@
                             <th>nome</th>
                             <th>email</th>
                             <th>tipo</th>
-                            <th>taxi</th>
                             <th>...</th>
                         </tr>
                     </thead>
@@ -80,7 +79,6 @@
                             <td>{{ $usuario['nome_usuario'] }}</td>
                             <td>{{ $usuario['email_usuario'] }}</td>
                             <td>{{ $usuario['tipo_usuario'] }}</td>
-                            <td>{{ $usuario['id_taxis'] }}</td>
 
                             <td class="tdform">
                                 <form class="formulario" action="" method="get"> 

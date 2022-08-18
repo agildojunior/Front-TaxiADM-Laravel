@@ -55,7 +55,7 @@
                     </thead>
                     <tbody>
                         @foreach($responseArray as $corridas)
-                        @if($corridas['status'] == 'Aceita' && $corridas['id_taxi'] == '1' ) 
+                        @if($corridas['status'] == 'Aceita' && $corridas['id_taxi'] == $ID_logado ) 
                         <tr>
                             <td>{{ $corridas['id_corrida'] }}</td>
                             <td>{{ $corridas['origem'] }}</td>

@@ -65,6 +65,10 @@
                     <form class="formulario" action="/adicionartaxis"  method="get"> 
 
                     <div class="form-group">
+                        <label>ID do taxista</label>
+                        <input type="text" placeholder="Telefone" name="id_usuario" required>
+                    </div>
+                    <div class="form-group">
                         <label>Telefone do Motorista</label>
                         <input type="text" placeholder="Telefone" name="telefone_taxista" required>
                     </div>
