@@ -10,14 +10,14 @@ use Illuminate\Support\Facades\Cookie;
 class consumirapiController extends Controller
 {
     //cookie
-    public function setCookie_logado($ID_logado){
-        Cookie::queue('cookie_logado', $ID_logado);
-    }
 
-    public function getCookie_logado(){
-        $cookieValue = Cookie::get('cookie_logado');
-        return response()->json($cookieValue);
-    }
+    // public function setCookie_logado($ID_logado){
+    //     Cookie::queue('cookie_logado', $ID_logado);
+    // }
+    // public function getCookie_logado(){
+    //     $cookieValue = Cookie::get('cookie_logado');
+    //     return response()->json($cookieValue);
+    // }
 
     //------------------------------------------------------------------
     //------------------------------------------------------------------
@@ -87,7 +87,6 @@ class consumirapiController extends Controller
         ];
         $dados = $request->all();
         $response = Http::withHeaders($header)->post('http://127.0.0.1:8090/taxis',[
-        'nome_taxista' => $request->input('nome_taxista'),
         'telefone_taxista' => $request->input('telefone_taxista'),
         'modelo_taxi' => $request->input('modelo_taxi'),
         'placa_taxi' => $request->input('placa_taxi')
@@ -110,7 +109,6 @@ class consumirapiController extends Controller
         ];
         $id2 = intval($id);
         $response = Http::withHeaders($header)->put('http://127.0.0.1:8090/taxis/'. $id2,[
-            'nome_taxista' => $request->input('nome_taxista'),
             'telefone_taxista' => $request->input('telefone_taxista'),
             'modelo_taxi' => $request->input('modelo_taxi'),
             'placa_taxi' => $request->input('placa_taxi')
@@ -170,9 +168,17 @@ class consumirapiController extends Controller
             'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
         ];
         $id2 = intval($id);
+        //pegando o id do usuario logado
+        $ID_logado = intval(getCookie_logado());
+        //pegando insformaçoes do usuario logado
+        $Usuario_logado = Http::withHeaders($header)->get('http://127.0.0.1:8090/usuarios/'. $id2);
+        //transformando dados do json
+        $Usuario_logado2 = $Usuario_logado->json();
+        //pegando somente o id do taxi
+        $ID_taxiLog = $Usuario_logado2['id_taxis'];
+        //aceitando corrida
         $response = Http::withHeaders($header)->put('http://127.0.0.1:8090/corridas/'. $id2,[
-            
-            'id_taxi' => 1, //o ID sera mudado para o id do taxi do motorista que estiver logado, coloquei o numero 1 somente de exemplo.
+            'id_taxi' => $ID_taxiLog, //o ID sera mudado para o id do taxi do motorista que estiver logado, coloquei o numero 1 somente de exemplo.
             'status' => "Aceita",
             ]);
             return redirect('/taxistaCorridasDisponiveis');
@@ -265,8 +271,8 @@ class consumirapiController extends Controller
             return redirect('/');
         }
         if($log['tipo_usuario'] == 'taxista'){
-            // $ID_logado = intval($log['id_usuario']);
-            // setCookie_logado($ID_logado);
+            $ID_logado = intval($log['id_usuario']);
+            setCookie_logado($ID_logado);
             if($log['email_usuario'] == $email && $log['senha_usuario'] == $senha ){
                 return redirect('/taxistaCorridasDisponiveis');
             }

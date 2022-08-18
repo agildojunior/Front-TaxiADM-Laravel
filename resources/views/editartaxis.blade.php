@@ -66,10 +66,6 @@
                     <form class="formulario" action="{{ route('editar_taxis3', ['id' => $responseArray['id_taxis']]) }}"  method="get"> 
                     
                     <div class="form-group">
-                        <label>Nome do Motorista</label>
-                        <input type="text" placeholder="{{$responseArray['nome_taxista']}}" name="nome_taxista" required>
-                    </div>
-                    <div class="form-group">
                         <label>Telefone do Motorista</label>
                         <input type="text" placeholder="{{$responseArray['telefone_taxista']}}" name="telefone_taxista" required>
                     </div>

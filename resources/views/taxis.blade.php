@@ -66,7 +66,6 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Motorista</th>
                             <th>Telefone</th>
                             <th>Modelo</th>
                             <th>Placa</th>
@@ -77,7 +76,6 @@
                         @foreach($responseArray as $taxi)
                         <tr>
                             <td>{{ $taxi['id_taxis'] }}</td>
-                            <td>{{ $taxi['nome_taxista'] }}</td>
                             <td>{{ $taxi['telefone_taxista'] }}</td>
                             <td>{{ $taxi['modelo_taxi'] }}</td>
                             <td>{{ $taxi['placa_taxi'] }}</td>
