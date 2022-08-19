@@ -67,19 +67,19 @@
                     
                     <div class="form-group">
                         <label>ID do taxista</label>
-                        <input type="text" placeholder="{{$responseArray['id_usuario']}}" name="id_usuario" required>
+                        <input type="text" value="{{$responseArray['id_usuario']}}" placeholder="{{$responseArray['id_usuario']}}" name="id_usuario" required>
                     </div>
                     <div class="form-group">
                         <label>Telefone do Motorista</label>
-                        <input type="text" placeholder="{{$responseArray['telefone_taxista']}}" name="telefone_taxista" required>
+                        <input type="text" value="{{$responseArray['telefone_taxista']}}" placeholder="{{$responseArray['telefone_taxista']}}" name="telefone_taxista" required>
                     </div>
                     <div class="form-group">
                         <label>Modelo do carro</label>
-                        <input type="text" placeholder="{{$responseArray['modelo_taxi']}}" name="modelo_taxi" required>
+                        <input type="text" value="{{$responseArray['modelo_taxi']}}" placeholder="{{$responseArray['modelo_taxi']}}" name="modelo_taxi" required>
                     </div>
                     <div class="form-group">
                         <label>Placa do carro</label>
-                        <input type="text" placeholder="{{$responseArray['placa_taxi']}}" name="placa_taxi" required>
+                        <input type="text" value="{{$responseArray['placa_taxi']}}" placeholder="{{$responseArray['placa_taxi']}}" name="placa_taxi" required>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="">Editar Taxi</button>

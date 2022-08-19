@@ -74,13 +74,14 @@
                     </thead>
                     <tbody>
                         @foreach($responseArray as $empresa)
+                        @if($empresa['ativo'] == 'true') 
                         <tr>
                             <td>{{ $empresa['id_empresa'] }}</td>
                             <td>{{ $empresa['nome'] }}</td>
                             <td>{{ $empresa['cnpj'] }}</td>
                             <td>Pau dos Ferros RN</td>
                             <td class="tdform">
-                                <form class="formulario" action="" method="get"> 
+                                <form class="formulario" action="{{ route('delete_empresas', ['id' => $empresa['id_empresa']]) }}" method="get"> 
                                     <button type="submit" class="buttondelete">Apagar</button>
                                 </form>
                                 <form class="formulario" action="{{ route('editar_empresas', ['id' => $empresa['id_empresa']]) }}" method="get"> 
@@ -88,6 +89,7 @@
                                 </form>
                             </td>
                         </tr>
+                        @endif
                         @endforeach
                     </tbody>
                     

@@ -75,7 +75,7 @@
                     </div>
                     <div class="form-group">
                         <label>Senha</label>
-                        <input type="password" placeholder="Nova senha." name="senha" required>
+                        <input type="password" value="{{$responseArray['senha_usuario']}}" placeholder="Nova senha." name="senha" required>
                     </div>
                     <div class="form-group">
                         <label>Tipo do usuario</label>

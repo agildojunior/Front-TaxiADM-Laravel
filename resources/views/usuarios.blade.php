@@ -74,6 +74,7 @@
                     </thead>
                     <tbody>
                         @foreach($responseArray as $usuario)
+                        @if($usuario['ativo'] == 'true') 
                         <tr>
                             <td>{{ $usuario['id_usuario'] }}</td>
                             <td>{{ $usuario['nome_usuario'] }}</td>
@@ -81,7 +82,7 @@
                             <td>{{ $usuario['tipo_usuario'] }}</td>
 
                             <td class="tdform">
-                                <form class="formulario" action="" method="get"> 
+                                <form class="formulario" action="{{ route('delete_usuarios', ['id' => $usuario['id_usuario']]) }}" method="get"> 
                                     <button type="submit" class="buttondelete">Apagar</button>
                                 </form>
                                 <form class="formulario" action="{{ route('editar_usuariob', ['id' => $usuario['id_usuario']]) }}" method="get"> 
@@ -89,6 +90,7 @@
                                 </form>
                             </td>
                         </tr>
+                        @endif
                         @endforeach
                     </tbody>
                     

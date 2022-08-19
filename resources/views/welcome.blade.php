@@ -19,12 +19,12 @@
 
                 <div class="textbox">
                     <i class="fa fa-user" aria-hidden="true"></i>
-                    <input type="text"placeholder="Email" name="email">
+                    <input type="text"placeholder="Email" name="email" required>
                 </div>
 
                 <div class="textbox">
                     <i class="fa fa-lock" aria-hidden="true"></i>
-                    <input type="password"placeholder="Senha" name="senha">
+                    <input type="password"placeholder="Senha" name="senha" required>
                 </div>
 
                 <button class="btn" type="submit" class="">Login</button>

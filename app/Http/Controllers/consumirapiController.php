@@ -65,6 +65,15 @@ class consumirapiController extends Controller
             ]);
             return redirect('/empresas');
     }
+    //Deletar empresa
+    public function deleteempresas($id){
+        $header = [
+            'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
+        ];
+        $id2 = intval($id);
+        $response = Http::withHeaders($header)->delete('http://127.0.0.1:8090/empresas/'. $id2);
+            return redirect('/empresas');
+    }
 
     //------------------------------------------------------------------
     //------------------------------------------------------------------
@@ -115,6 +124,15 @@ class consumirapiController extends Controller
             'modelo_taxi' => $request->input('modelo_taxi'),
             'placa_taxi' => $request->input('placa_taxi')
             ]);
+            return redirect('/taxis');
+    }
+    //Deletar taxis
+    public function deletetaxis($id){
+        $header = [
+            'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
+        ];
+        $id2 = intval($id);
+        $response = Http::withHeaders($header)->delete('http://127.0.0.1:8090/taxis/'. $id2);
             return redirect('/taxis');
     }
 
@@ -250,6 +268,16 @@ class consumirapiController extends Controller
             ]);
             return redirect('/usuarios');
     }
+    //delete usuarios
+    public function deleteusuarios($id){
+        $header = [
+            'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
+        ];
+        $id2 = intval($id);
+        $response = Http::withHeaders($header)->delete('http://127.0.0.1:8090/usuarios/'. $id2);
+            return redirect('/usuarios');
+    }
+
     //------------------------------------------------------------------
     //------------------------------------------------------------------
     //                             Login
@@ -264,6 +292,11 @@ class consumirapiController extends Controller
         $response = Http::withHeaders($header)->get('http://127.0.0.1:8090/usuarios/email/'. $email);
         $log = $response->json();
         if($log == null){
+            dd(1);
+            return redirect('/');
+        }
+        if($log['ativo'] == false){
+            dd(2);
             return redirect('/');
         }
         if($log['tipo_usuario'] == 'taxista'){
@@ -271,11 +304,15 @@ class consumirapiController extends Controller
             setCookie_logado($ID_logado);
             if($log['email_usuario'] == $email && $log['senha_usuario'] == $senha ){
                 return redirect('/taxistaCorridasDisponiveis');
+            }else{
+                return redirect('/');
             }
         }
         if($log['tipo_usuario'] == 'admin'){
             if($log['email_usuario'] == $email && $log['senha_usuario'] == $senha ){
                 return redirect('/home');
+            }else{
+                return redirect('/');
             }
         }
         
