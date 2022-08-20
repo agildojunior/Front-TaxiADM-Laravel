@@ -16,7 +16,10 @@ use Illuminate\Http\Request;
 |
 */
 
+
 Route::get('/', function () {
+    $ID_logado = null;
+    setCookie_logado($ID_logado);
     return view('welcome');
 });
 
@@ -74,8 +77,13 @@ Route::get('/editarstatuscorrida', function () {
 
 
 //-----------------------------------------------------------------------------------
+//home
+Route::get('/home', [consumirapiController::class, 'home']);
+
 //empresas
 Route::get('/empresas', [consumirapiController::class, 'todasempresas']);
+
+Route::get('/addempresas', [consumirapiController::class, 'addempresas']);
 
 Route::get('/adicionarempresas', [consumirapiController::class, 'adicionarempresas']);
 
@@ -88,6 +96,8 @@ Route::get('/deleteempresas{id}', [consumirapiController::class, 'deleteempresas
 Route::get('/taxis', [consumirapiController::class, 'todostaxis']);
 
 Route::get('/adicionartaxis', [consumirapiController::class, 'adicionartaxis']);
+
+Route::get('/addtaxis', [consumirapiController::class, 'addtaxis']);
 
 Route::get('/editartaxis2{id}', [consumirapiController::class, 'editartaxis2'])->name('editar_taxis');
 Route::get('/editartaxis3{id}', [consumirapiController::class, 'editartaxis3'])->name('editar_taxis3');

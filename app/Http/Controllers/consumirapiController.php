@@ -24,16 +24,25 @@ class consumirapiController extends Controller
     //                            Empresas
     //------------------------------------------------------------------
     //listar empresas
+
     public function todasempresas(){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
         $header = [
             'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
         ];
+        
         $response = Http::withHeaders($header)->get('http://127.0.0.1:8090/empresas');
         $responseArray = $response->json();
         return view('empresas', compact('responseArray'));
     }
+    //verificação
+    public function addempresas(){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
+        return view('addempresas');
+    }
     //add empresas
     public function adicionarempresas(Request $request){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
         $header = [
             'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
         ];
@@ -46,6 +55,7 @@ class consumirapiController extends Controller
     }
     //editar empresas
     public function editarempresas2($id){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
         $header = [
             'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
         ];
@@ -55,6 +65,7 @@ class consumirapiController extends Controller
         return view('/editarempresas', compact('responseArray'));
     }
     public function editarempresas3($id, Request $request){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
         $header = [
             'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
         ];
@@ -67,6 +78,7 @@ class consumirapiController extends Controller
     }
     //Deletar empresa
     public function deleteempresas($id){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
         $header = [
             'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
         ];
@@ -82,6 +94,7 @@ class consumirapiController extends Controller
     //listar taxis
     
     public function todostaxis(){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
         $header = [
             'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
         ];
@@ -89,8 +102,14 @@ class consumirapiController extends Controller
         $responseArray = $response->json();
         return view('taxis', compact('responseArray'));
     }
+    //verificação
+    public function addtaxis(){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
+        return view('addtaxis');
+    }
     //add taxis
     public function adicionartaxis(Request $request){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
         $header = [
             'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
         ];
@@ -105,6 +124,7 @@ class consumirapiController extends Controller
     }
     //editar taxis
     public function editartaxis2($id){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
         $header = [
             'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
         ];
@@ -114,6 +134,7 @@ class consumirapiController extends Controller
         return view('/editartaxis', compact('responseArray'));
     }
     public function editartaxis3($id, Request $request){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
         $header = [
             'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
         ];
@@ -128,6 +149,7 @@ class consumirapiController extends Controller
     }
     //Deletar taxis
     public function deletetaxis($id){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
         $header = [
             'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
         ];
@@ -142,6 +164,7 @@ class consumirapiController extends Controller
     //------------------------------------------------------------------
     //listar Corridas
     public function todascorridas(){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
         $header = [
             'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
         ];
@@ -151,6 +174,7 @@ class consumirapiController extends Controller
     }
     //Editar Status Corridas
     public function editarstatus($id){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
         $header = [
             'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
         ];
@@ -160,6 +184,7 @@ class consumirapiController extends Controller
         return view('/editarstatuscorrida', compact('responseArray'));
     }
     public function editarstatusb($id, Request $request){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
         $header = [
             'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
         ];
@@ -176,6 +201,7 @@ class consumirapiController extends Controller
     //------------------------------------------------------------------
     //corridas disponiveis
     public function corridasDispo(){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
         $header = [
             'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
         ];
@@ -184,6 +210,7 @@ class consumirapiController extends Controller
         return view('taxistaCorridasDisponiveis', compact('responseArray'));
     }
     public function aceitarCorrida($id){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
         $header = [
             'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
         ];
@@ -199,6 +226,7 @@ class consumirapiController extends Controller
     }
     //minhas corridas 
     public function minhasCorridas(){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
         $header = [
             'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
         ];
@@ -208,6 +236,7 @@ class consumirapiController extends Controller
         return view('CorridasAceitas', compact('responseArray','ID_logado'));
     }
     public function finalizarCorrida($id){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
         $header = [
             'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
         ];
@@ -224,6 +253,7 @@ class consumirapiController extends Controller
     //------------------------------------------------------------------
     //Listar usuarios
     public function todosUsuarios(){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
         $header = [
             'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
         ];
@@ -233,6 +263,7 @@ class consumirapiController extends Controller
     }
     //Adicionar Usuarios  
     public function adicionarUsuario(Request $request){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
         $header = [
             'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
         ];
@@ -247,6 +278,7 @@ class consumirapiController extends Controller
     }
     //editar usuarios
     public function editarusuariosb($id){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
         $header = [
             'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
         ];
@@ -256,6 +288,7 @@ class consumirapiController extends Controller
         return view('/editarusuarios', compact('responseArray'));
     }
     public function editarusuarios3($id, Request $request){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
         $header = [
             'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
         ];
@@ -270,6 +303,7 @@ class consumirapiController extends Controller
     }
     //delete usuarios
     public function deleteusuarios($id){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
         $header = [
             'x-access-token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbnBqIjoiMTIzNCIsImV4cCI6MTY2MDYxMjE4N30.7I14fCQTLz_Fw4atNmuo2wfd6nYNT7yMxypX6Ofq4Ik'
         ];
@@ -292,11 +326,9 @@ class consumirapiController extends Controller
         $response = Http::withHeaders($header)->get('http://127.0.0.1:8090/usuarios/email/'. $email);
         $log = $response->json();
         if($log == null){
-            dd(1);
             return redirect('/');
         }
         if($log['ativo'] == false){
-            dd(2);
             return redirect('/');
         }
         if($log['tipo_usuario'] == 'taxista'){
@@ -309,6 +341,8 @@ class consumirapiController extends Controller
             }
         }
         if($log['tipo_usuario'] == 'admin'){
+            $ID_logado = intval($log['id_usuario']);
+            setCookie_logado($ID_logado);
             if($log['email_usuario'] == $email && $log['senha_usuario'] == $senha ){
                 return redirect('/home');
             }else{
@@ -316,6 +350,12 @@ class consumirapiController extends Controller
             }
         }
         
+    }
+
+    //home verificação
+    public function home(){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
+        return view('home');
     }
 
 }
