@@ -79,7 +79,9 @@ Route::get('/editarstatuscorrida', function () {
 //-----------------------------------------------------------------------------------
 //home
 Route::get('/home', [consumirapiController::class, 'home']);
-
+//cadastro
+Route::get('/cadastro', [consumirapiController::class, 'cadastroUsuario']);
+//-----------------------------------------------------------------------------------
 //empresas
 Route::get('/empresas', [consumirapiController::class, 'todasempresas']);
 
@@ -91,6 +93,7 @@ Route::get('/editarempresas2{id}', [consumirapiController::class, 'editarempresa
 Route::get('/editarempresas3{id}', [consumirapiController::class, 'editarempresas3'])->name('editar_empresas3');
 
 Route::get('/deleteempresas{id}', [consumirapiController::class, 'deleteempresas'])->name('delete_empresas');
+
 //------------------------------------------------------------------------------------
 //taxis
 Route::get('/taxis', [consumirapiController::class, 'todostaxis']);
@@ -103,6 +106,7 @@ Route::get('/editartaxis2{id}', [consumirapiController::class, 'editartaxis2'])-
 Route::get('/editartaxis3{id}', [consumirapiController::class, 'editartaxis3'])->name('editar_taxis3');
 
 Route::get('/deletetaxis{id}', [consumirapiController::class, 'deletetaxis'])->name('delete_taxis');
+
 //-----------------------------------------------------------------------------------
 //corridas
 Route::get('/corridas', [consumirapiController::class, 'todascorridas']);

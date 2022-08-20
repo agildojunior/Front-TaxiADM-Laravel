@@ -105,7 +105,9 @@
                         <div class="pagina">5</div>
                         <div class="pagina">></div>
                 </div>
-
+                <div class="paginacao">
+                    <a class="none" href="/cadastro"><input class="btn2" type="button" name="" value="Cadastrar novo usuario"></a>
+                </div>
             </div>
         </div>
         

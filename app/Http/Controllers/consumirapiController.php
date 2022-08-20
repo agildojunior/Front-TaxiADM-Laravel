@@ -274,7 +274,7 @@ class consumirapiController extends Controller
         'senha_usuario' => $request->input('senha'),
         'tipo_usuario' => $request->input('tipo')
         ]);
-        return redirect('/');
+        return redirect('/usuarios');
     }
     //editar usuarios
     public function editarusuariosb($id){
@@ -356,6 +356,11 @@ class consumirapiController extends Controller
     public function home(){
         if(getCookie_logado() == null ){ return redirect ('/');}//verificão
         return view('home');
+    }
+    //usuario cadastro
+    public function cadastroUsuario(){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
+        return view('cadastroUsuario');
     }
 
 }

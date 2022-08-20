@@ -28,7 +28,8 @@
                 </div>
 
                 <button class="btn" type="submit" class="">Login</button>
-                <a href="/cadastro"><input class="btn2" type="button" name="" value="Cadastro"></a>
+                
+                <!-- <a href="/cadastro"><input class="btn2" type="button" name="" value="Cadastro"></a> -->
 
             </form>
 
