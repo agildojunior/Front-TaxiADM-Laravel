@@ -22,4 +22,9 @@ class Controller extends BaseController
         $cookieValue = Cookie::get('cookie_logado');
         return response()->json($cookieValue);
     }
+    public function getUsuarioLoginID(){
+        if(getCookie_logado() == null ){ return redirect ('/');}//verificão
+        return ;
+    }
+        
 }
