@@ -12,3 +12,13 @@ use Illuminate\Support\Facades\Cookie;
         $cookieValue = Cookie::get('cookie_logado');
         return $cookieValue;
     }
+
+    function setEmail_logado($Email_logado){
+        Cookie::queue('email_logado', $Email_logado);
+        return ;
+    }
+    function getEmail_logado(){
+        $cookieValue = Cookie::get('email_logado');
+        return $cookieValue;
+    }
+    
