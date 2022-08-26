@@ -50,6 +50,7 @@
                             <th>Destino</th>
                             <th>Cliente</th>
                             <th>Empresa</th>
+                            <th>Data</th>
                             <th>...</th>
                         </tr>
                     </thead>
@@ -62,6 +63,7 @@
                             <td>{{ $corridas['destino'] }}</td>
                             <td>{{ $corridas['nome_usuario'] }}</td>
                             <td>{{ $corridas['id_empresa'] }}</td>
+                            <td>{{ $corridas['created_at'] }}</td>
 
                             <td class="tdform">
                                 <form class="formulario" action="{{ route('aceitar_Corrida', ['id' => $corridas['id_corrida']]) }}" method="get"> 

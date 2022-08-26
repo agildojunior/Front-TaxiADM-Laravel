@@ -72,6 +72,7 @@
                             <th>Cliente</th>
                             <th>Empresa</th>
                             <th>Cod.Taxista</th>
+                            <th>Data</th>
                             <th>...</th>
                         </tr>
                     </thead>
@@ -85,6 +86,7 @@
                             <td>{{ $corridas['nome_usuario'] }}</td>
                             <td>{{ $corridas['id_empresa'] }}</td>
                             <td>{{ $corridas['id_taxi'] }}</td>
+                            <td>{{ $corridas['created_at'] }}</td>
 
                             <td class="tdform">
                                 <form class="formulario" action="{{ route('editar_status', ['id' => $corridas['id_corrida']]) }}" method="get"> 
