@@ -9,15 +9,6 @@ use Illuminate\Support\Facades\Cookie;
 
 class consumirapiController extends Controller
 {
-    //cookie
-
-    // public function setCookie_logado($ID_logado){
-    //     Cookie::queue('cookie_logado', $ID_logado);
-    // }
-    // public function getCookie_logado(){
-    //     $cookieValue = Cookie::get('cookie_logado');
-    //     return response()->json($cookieValue);
-    // }
 
     //------------------------------------------------------------------
     //------------------------------------------------------------------
